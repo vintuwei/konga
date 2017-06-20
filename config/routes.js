@@ -78,7 +78,15 @@ module.exports.routes = {
   'PUT /kong/apis/'                     : 'KongApiController.updateOrCreate',
   'DELETE /kong/apis/:id'               : 'KongApiController.delete',
 
+  // Service onboarding routes
+  'POST /kong/v1/joa/services'          : 'KongServiceOnboardingController.create',
+  'GET /kong/v1/joa/services/:id'       : 'KongServiceOnboardingController.retrieve',
+  'GET /kong/v1/joa/services'           : 'KongServiceOnboardingController.list',
+  'PATCH /kong/v1/joa/services/:id'     : 'KongServiceOnboardingController.update',
+  'PUT /kong/v1/joa/services/'          : 'KongServiceOnboardingController.updateOrCreate',
+  'DELETE /kong/v1/joa/services/:id'    : 'KongServiceOnboardingController.delete',
 
+  // Consumer routes
   'POST /kong/consumers'                : 'KongConsumerController.create',
   'POST /kong/consumers/:id/acls'       : 'KongConsumerController.addAcl',
   'GET /kong/consumers/:id'             : 'KongConsumerController.retrieve',
@@ -154,6 +162,5 @@ module.exports.routes = {
   'PUT /api/*'    : 'ApiController.proxy',
   'PATCH /api/*'  : 'ApiController.proxy',
   'DELETE /api/*' : 'ApiController.proxy'
-
 
 };

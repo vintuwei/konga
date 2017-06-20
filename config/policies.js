@@ -38,6 +38,14 @@ module.exports.policies = {
     '*':              ['authenticated','dynamicNode'],
   },
 
+  KongServiceOnboardingController : {
+    '*':              ['authenticated','dynamicNode'],
+  },
+
+  KongConsumerApiPermissionsController : {
+    '*':              ['authenticated','dynamicNode'],
+  },
+
   RemoteStorageController : {
     '*':              ['authenticated'],
   },
