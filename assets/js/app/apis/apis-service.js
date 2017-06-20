@@ -33,7 +33,8 @@
                   upstream_read_timeout : 6000,
                   https_only:false,
                   http_if_terminated:true,
-                  upstream_url : ''
+                  upstream_url : '',
+                  swagger_blob: ''
               }
           }
 
@@ -44,23 +45,23 @@
               },
 
               all : function() {
-                  return $http.get('kong/apis')
+                  return $http.get('kong/v1/joa/services')
               },
 
               findById : function(apiId) {
-                  return $http.get('kong/apis/' + apiId)
+                  return $http.get('kong/v1/joa/services/' + apiId)
               },
 
               update : function(api) {
-                  return $http.patch('kong/apis/' + api.id,api)
+                  return $http.patch('kong/v1/joa/services/' + api.id,api)
               },
 
               delete : function(api) {
-                  return $http.delete('kong/apis/' + api.id)
+                  return $http.delete('kong/v1/joa/services/' + api.id)
               },
 
               add : function(api) {
-                  return $http.post('kong/apis/',api)
+                  return $http.post('kong/v1/joa/services/',api)
               },
 
               plugins : function(apiId) {
