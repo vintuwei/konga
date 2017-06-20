@@ -85,3 +85,14 @@
         </p>
     </div>
 </div>
+
+<div class="form-group " ng-class="{'has-error' : errors.swagger_blob}">
+    <label class="col-sm-4 control-label">Swagger Blob</label>
+    <div class="col-sm-7">
+        <input type="url" ng-model="api.swagger_blob" class="form-control">
+        <div class="text-danger" ng-if="errors.swagger_blob" data-ng-bind="errors.swagger_blob"></div>
+        <p class="help-block">
+            Used to validate requests being sent to the upstream api
+        </p>
+    </div>
+</div>
